@@ -7,6 +7,7 @@ public class Sisteminha {
         Scanner sc = new Scanner(System.in);
 
         int D=1,aux, x=0, id=0;
+        double caixa=0.0;
 
         String[] clientes = new String[10];
 
@@ -105,16 +106,22 @@ public class Sisteminha {
                     }
                     break;
                 case 4:
+
+                    System.out.println("-------------------------");
+                    System.out.printf("Valor em Caixa: R$ %.2f\n" ,caixa);
                     
                     break;
                 case 5:
                     
                     break;
                 case 6:
-                    
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     break;
                 case 7:
-
+                    System.out.println("--------------------------------");
+                    System.out.println("SISTEMA FINALIZADO VOLTE SEMPRE");
+                    System.out.println("--------------------------------");
                     D = 0;
                     break;                
             
