@@ -6,7 +6,7 @@ public class Sisteminha {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int D=1,aux, x=0;
+        int D=1,aux, x=0, id=0;
 
         String[] clientes = new String[10];
 
@@ -45,7 +45,7 @@ public class Sisteminha {
 
                 for (int i = 0; i < produto.length; i++) {
                     System.out.println(
-                        "ID:" + i +
+                        "ID:" + (i+1) +
                         " - Produto:" + produto[i] +
                         " - Preço: R$" + preco[i] +
                         " - Quantidade em estoque: " + quantidade[i]
@@ -67,7 +67,7 @@ public class Sisteminha {
                 case 2:
                     System.out.println("-----------------------");
                     for (int i=0; i < 10; i++){
-                        System.out.println("ID:" + i + " Cliente: " + clientes[i]);
+                        System.out.println("ID:" + (i+1) + " Cliente: " + clientes[i]);
                     }
                     System.out.println("-----------------------");
                     System.out.println("Escolha uma das opcoes|");
@@ -84,7 +84,25 @@ public class Sisteminha {
 
                     break;
                 case 3:
-                    
+                    if (id < 10) {
+                        System.out.println("------------CADASTRO------------");
+                        System.out.println("Digite o nome: ");
+                        clientes[id] = sc.next();
+                        id++;
+
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
+
+                        System.out.println("-------------------");
+                        System.out.println("Clitente Cadastrado");
+                        System.out.println("-------------------");
+                    } else {
+
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
+
+                        System.out.println("Numero de Clientes Excedido!");
+                    }
                     break;
                 case 4:
                     
