@@ -14,7 +14,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int[] vet = new int[6];
-        int somapar=0;
+        int somapar=0, qtdimpar=0;
 
         System.out.println("DIGITE OS 6 NUMEROS");
 
@@ -33,6 +33,17 @@ public class Main {
 
         System.out.println("\nSOMA DOS NUMEROS PARES:");
         System.out.println(somapar);
+
+        System.out.println("\nNUMEROS IMPARES:");
+        for (int i=0; i < 6; i++) {
+            if (vet[i]%2==1) {
+                System.out.print(vet[i]+" ");
+                somapar = somapar + vet[i];
+                qtdimpar++;
+            }
+        }
+
+        System.out.println("\nQUANTIDADE DE NUMEROS IMPARES: "+qtdimpar);
 
         sc.close();
     }
