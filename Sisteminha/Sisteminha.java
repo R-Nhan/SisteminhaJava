@@ -23,6 +23,9 @@ public class Sisteminha {
         double[] preco = {2.25, 1.75, 2.35, 2.15, 2.45};
 
         int[] quantidade = {40, 45, 60, 48, 50};
+
+        System.out.print("\033[H\033[2J");
+        System.out.flush(); 
         
         while (login!=0) {
             System.out.println("-------------------");
@@ -104,7 +107,11 @@ public class Sisteminha {
                 case 2:
                     System.out.println("-----------------------");
                     for (int i=0; i < 10; i++){
-                        System.out.println("ID:" + (i+1) + " Cliente: " + clientes[i]);
+                        if (clientes[i] == null) {
+                            System.out.println("ID:" + (i+1) + " Cliente: ");
+                        } else {
+                            System.out.println("ID:" + (i+1) + " Cliente: " + clientes[i]);
+                        }
                     }
                     System.out.println("-----------------------");
                     System.out.println("Escolha uma das opcoes|");
