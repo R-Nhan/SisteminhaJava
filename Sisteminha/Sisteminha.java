@@ -6,8 +6,9 @@ public class Sisteminha {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int D=1,aux, x=0, id=0, ler, qtd, idcliente;
+        int D=1, aux, x=0, id=0, ler, qtd, idcliente, login=1;
         double caixa=0.0, total;
+        String usuario, senha, user="admin", pass="1234";
 
         String[] clientes = new String[10];
 
@@ -22,8 +23,35 @@ public class Sisteminha {
         double[] preco = {2.25, 1.75, 2.35, 2.15, 2.45};
 
         int[] quantidade = {40, 45, 60, 48, 50};
+        
+        while (login!=0) {
+            System.out.println("-------------------");
+            System.out.println("    REGISTRE-SE    ");
+            System.out.println("-------------------");
+            System.out.println("Usuário: ");
+            usuario = sc.next();
+            if (usuario.equals(user)) {
+                System.out.println("Senha: ");
+                senha = sc.next();
+                if (senha.equals(pass)) {
+                    login = 0;
+                } else {
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    System.out.println("Senha Incorreta!");
+                }
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+                System.out.println("Usuario Incorreto!");
+            }
+        }
+
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
         while (D!=0) {
+            
             System.out.println("----------------------------------------");
             System.out.println("                MENU                    ");
             System.out.println("----------------------------------------");
@@ -38,8 +66,10 @@ public class Sisteminha {
             System.out.println();
             System.out.print("O que você deseja fazer? Escolha: ");
             aux = sc.nextInt();
+
             System.out.print("\033[H\033[2J");
             System.out.flush();
+
             switch (aux) {
                 case 1:
                     System.out.println("---------------------------- PRODUTOS -----------------------------");
